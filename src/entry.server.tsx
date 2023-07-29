@@ -3,16 +3,10 @@ import { PassThrough } from "stream";
 import type { EntryContext } from "@remix-run/node";
 import { Response } from "@remix-run/node";
 import { RemixServer } from "@remix-run/react";
-import * as Sentry from "@sentry/remix";
 import isbot from "isbot";
 import { renderToPipeableStream } from "react-dom/server";
 
 const ABORT_DELAY = 5000;
-
-Sentry.init({
-  dsn: `${process.env.SENTRY_DSN}`,
-  tracesSampleRate: 1,
-});
 
 const handleRequest = (
   request: Request,

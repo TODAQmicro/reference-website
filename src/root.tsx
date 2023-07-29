@@ -32,8 +32,6 @@ declare global {
  */
 export const links: LinksFunction = () => {
   return [
-    { rel: "preconnect", href: "https://fonts.googleapis.com" },
-    { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "" },
     { rel: "stylesheet", href: globalStylesUrl },
   ];
 };
@@ -112,6 +110,8 @@ function Document({
 function Layout({ children }: React.PropsWithChildren<{}>) {
   const year = new Date().getFullYear();
 
+  return <p>Copyright &copy; {year} TODAQ Micro Inc.</p>;
+  /*
   return (
     <div className="todaq-app">
       <header className="todaq-app__header">
@@ -175,6 +175,7 @@ function Layout({ children }: React.PropsWithChildren<{}>) {
       </footer>
     </div>
   );
+  */
 }
 
 export function CatchBoundary() {
