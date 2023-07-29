@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+
+/*
+ * You can just delete everything here or keep whatever you like, it's just a
+ * quick baseline!
+ */
+:root {
+  --color-black: #000000;
+  --color-white: #FFFFFF;
+  --color-variant-1: #FC5C65;
+  --color-variant-2: #F7B731;
+  --color-variant-3: #2BCBBA;
+  --color-variant-dark-3: #0FB9B1;
+  --color-foreground: #1A202C;
+  --color-secondary-foreground: #6E717A;
+  --color-background: #FFFFFF;
+  --color-secondary-background: #F1F1F1;
+  --color-links: #777777;
+  --color-links-hover: #000000;
+  --color-border: #000000;
+  --color-light-border: #CCCCCC;
+  --font-body: -apple-system, "Segoe UI", Helvetica Neue, Helvetica, Roboto,
+    Arial, sans-serif, system-ui, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+:-moz-focusring {
+  outline: auto;
+}
+
+:focus {
+  outline: var(--color-links) solid 0px;
+  outline-offset: 0;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+}
+
+body {
+  font-family: var(--font-body);
+  line-height: 1.5;
+}
+
+a {
+  color: var(--color-links);
+  text-decoration: none;
+  transition: color 100ms ease-in;
+  transition: border-color: 100ms ease-in;
+}
+
+a:hover {
+  color: var(--color-links-hover);
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', var(--font-body);
+  font-weight: 500;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  background-color: var(--color-border);
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+input:where([type="text"]),
+input:where([type="search"]) {
+  display: block;
+  border: 1px solid var(--color-border);
+  width: 100%;
+  font: inherit;
+  line-height: 1;
+  height: calc(1ch + 1.5em);
+  padding-right: 0.5em;
+  padding-left: 0.5em;
+  background-color: hsl(0 0% 100% / 20%);
+  color: var(--color-foreground);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.container {
+  --gutter: 16px;
+  width: 1024px;
+  max-width: calc(100% - var(--gutter) * 2);
+  margin-right: auto;
+  margin-left: auto;
+}

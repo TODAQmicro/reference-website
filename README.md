@@ -1,2 +1,3 @@
-# reference-website
-Reference website implementing TODAQ Micro's API Provider micropayment service
+# Reference Website
+
+TODAQMicro API Partner reference website.
