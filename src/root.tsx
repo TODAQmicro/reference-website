@@ -110,8 +110,6 @@ function Document({
 function Layout({ children }: React.PropsWithChildren<{}>) {
   const year = new Date().getFullYear();
 
-  return <p>Copyright &copy; {year} TODAQ Micro Inc.</p>;
-  /*
   return (
     <div className="todaq-app">
       <header className="todaq-app__header">
@@ -128,26 +126,16 @@ function Layout({ children }: React.PropsWithChildren<{}>) {
             className="todaq-app__header-nav"
           >
             <ul>
-              <li>
-                <Link to="/about">About</Link>
-              </li>
-              <li>
-                <a href="mailto:contact@todaq.io">Contact</a>
-              </li>
-              <li>
-                <Link className="todaq-app__header-primary-link" to="">
-                  Get&nbsp;started
-                </Link>
-              </li>
             </ul>
           </nav>
         </div>
       </header>
-      <div className="todaq-app__main">
-        <div className="todaq-app__main-content">{children}</div>
-      </div>
+      <section className="todaq-app__main">
+        <div className="section todaq-app__main-content">{children}</div>
+      </section>
       <footer className="todaq-app__footer">
         <div className="container todaq-app__footer-content">
+          {/*
           <div className="todaq-app__footer-copyright">
             <Link
               to="/"
@@ -158,6 +146,7 @@ function Layout({ children }: React.PropsWithChildren<{}>) {
             </Link>
             <p>Copyright &copy; {year} TODAQ Micro Inc.</p>
           </div>
+          */}
           <nav
             aria-label="Footer navigation"
             className="todaq-app__footer-nav"
@@ -175,7 +164,6 @@ function Layout({ children }: React.PropsWithChildren<{}>) {
       </footer>
     </div>
   );
-  */
 }
 
 export function CatchBoundary() {
