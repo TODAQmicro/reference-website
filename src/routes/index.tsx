@@ -1,5 +1,6 @@
 import type { MetaFunction } from "@remix-run/node";
 import { CharityWaitlistSection, CharityWaitlistDocumentation } from "~/components/charity-waitlist";
+import CharityWaitlistPartners from "~/components/charity-waitlist/CharityWaitlistPartners";
 import { DocumentationProvider } from "~/components/documentation";
 
 export const meta: MetaFunction = () => ({
@@ -16,6 +17,7 @@ export default function Index() {
         <CharityWaitlistSection />
         <CharityWaitlistDocumentation />
       </DocumentationProvider>
+      <CharityWaitlistPartners />
     </div>
   ];
 }

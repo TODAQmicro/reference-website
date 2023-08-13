@@ -135,3 +135,5 @@ dist
 
 # Remix
 build
+.direnv
+.DS_Store

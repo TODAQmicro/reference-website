@@ -15,6 +15,8 @@ import * as React from "react";
 import { useEffect, useState } from "react";
 
 import globalStylesUrl from "~/styles/global.css";
+import todaqStylesUrl from "~/styles/todaq.css";
+import Logo from "src/components/SVG/Logo";
 
 declare global {
   interface Window {
@@ -33,6 +35,7 @@ declare global {
 export const links: LinksFunction = () => {
   return [
     { rel: "stylesheet", href: globalStylesUrl },
+    { rel: "stylesheet", href: todaqStylesUrl },
   ];
 };
 
@@ -119,8 +122,9 @@ function Layout({ children }: React.PropsWithChildren<{}>) {
             title="TODAQ Micro"
             className="todaq-app__header-home-link"
           >
-            TODAQ
+            <Logo />
           </Link>
+          {/* 
           <nav
             aria-label="Main navigation"
             className="todaq-app__header-nav"
@@ -128,6 +132,7 @@ function Layout({ children }: React.PropsWithChildren<{}>) {
             <ul>
             </ul>
           </nav>
+          */}
         </div>
       </header>
       <section className="todaq-app__main">
@@ -142,11 +147,10 @@ function Layout({ children }: React.PropsWithChildren<{}>) {
               title="TODAQ Micro"
               className="todaq-app__footer-home-link"
             >
-             TODAQ
+             <Logo />
             </Link>
             <p>Copyright &copy; {year} TODAQ Micro Inc.</p>
           </div>
-          */}
           <nav
             aria-label="Footer navigation"
             className="todaq-app__footer-nav"
@@ -160,6 +164,7 @@ function Layout({ children }: React.PropsWithChildren<{}>) {
               </li>
             </ul>
           </nav>
+          */}
         </div>
       </footer>
     </div>
