@@ -91,7 +91,7 @@
     align-items: center;
     max-width: 256px;
     padding-left: 16px;
-    pointer: cursor;
+    cursor: pointer;
 }
 
 .TODAQMicro__embed-wrapper {
