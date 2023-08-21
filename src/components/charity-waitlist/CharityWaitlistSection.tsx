@@ -27,7 +27,6 @@ export default function CharityWaitlistSection() {
             <TQ height={40}/>
             <div className="TODAQMicro__embed-wrapper">
               <span className="TODAQMicro__cost">0.250</span>
-              <span className="TODAQMicro__text">Micropay</span>
             </div>
             <TestQRCode />
           </div>
