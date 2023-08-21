@@ -15,6 +15,8 @@ import * as React from "react";
 import { useEffect, useState } from "react";
 
 import globalStylesUrl from "~/styles/global.css";
+import todaqStylesUrl from "~/styles/todaq.css";
+import Logo from "src/components/SVG/Logo";
 
 declare global {
   interface Window {
@@ -33,6 +35,7 @@ declare global {
 export const links: LinksFunction = () => {
   return [
     { rel: "stylesheet", href: globalStylesUrl },
+    { rel: "stylesheet", href: todaqStylesUrl },
   ];
 };
 
@@ -110,8 +113,6 @@ function Document({
 function Layout({ children }: React.PropsWithChildren<{}>) {
   const year = new Date().getFullYear();
 
-  return <p>Copyright &copy; {year} TODAQ Micro Inc.</p>;
-  /*
   return (
     <div className="todaq-app">
       <header className="todaq-app__header">
@@ -121,40 +122,32 @@ function Layout({ children }: React.PropsWithChildren<{}>) {
             title="TODAQ Micro"
             className="todaq-app__header-home-link"
           >
-            TODAQ
+            <Logo />
           </Link>
+          {/* 
           <nav
             aria-label="Main navigation"
             className="todaq-app__header-nav"
           >
             <ul>
-              <li>
-                <Link to="/about">About</Link>
-              </li>
-              <li>
-                <a href="mailto:contact@todaq.io">Contact</a>
-              </li>
-              <li>
-                <Link className="todaq-app__header-primary-link" to="">
-                  Get&nbsp;started
-                </Link>
-              </li>
             </ul>
           </nav>
+          */}
         </div>
       </header>
-      <div className="todaq-app__main">
-        <div className="todaq-app__main-content">{children}</div>
-      </div>
+      <section className="todaq-app__main">
+        <div className="section todaq-app__main-content">{children}</div>
+      </section>
       <footer className="todaq-app__footer">
         <div className="container todaq-app__footer-content">
+          {/*
           <div className="todaq-app__footer-copyright">
             <Link
               to="/"
               title="TODAQ Micro"
               className="todaq-app__footer-home-link"
             >
-             TODAQ
+             <Logo />
             </Link>
             <p>Copyright &copy; {year} TODAQ Micro Inc.</p>
           </div>
@@ -171,11 +164,11 @@ function Layout({ children }: React.PropsWithChildren<{}>) {
               </li>
             </ul>
           </nav>
+          */}
         </div>
       </footer>
     </div>
   );
-  */
 }
 
 export function CatchBoundary() {

@@ -1,0 +1,118 @@
+.block {
+  display: block;
+}
+
+.todaq-app__header {
+  margin: 2rem 0;
+}
+
+.todaq-charity {
+    margin: 2rem 0;
+    padding: 2rem;
+}
+
+.todaq-charity__wrapper {
+  display: flex;
+}
+
+.todaq-charity__one-third {
+  flex-grow: 1;
+  padding: 1rem;
+  margin-top: 284px;
+  width: 33%;
+}
+
+.todaq-charity__two-thirds {
+  flex-grow: 2;
+}
+
+.todaq-charity h1 {
+  color: #cccccc;
+  font-size: 6em;
+  line-height: 6rem;
+  margin-bottom: 0;
+}
+
+.todaq-charity h1 .todaq-charity__topline {
+  display: block;
+  text-align: right;
+}
+
+.todaq-charity h1 .todaq-charity__topline > span:first-child {
+  color: #000000;
+}
+
+.todaq-charity h1 .todaq-charity__topline > span:last-child {
+  color: #df1b4f;
+  margin-left: 32px;
+}
+
+.todaq-charity h1 .todaq-charity__subline {
+  display: block;
+  text-align: right;
+}
+
+.todaq-charity h1 .todaq-charity__subline > span:last-child {
+  margin-left: 32px;
+}
+
+.todaq-charity h2 {
+  color: #cccccc;
+  font-size: 3rem;
+  margin-top: 0;
+  text-align: right;
+}
+
+.todaq-partners {
+  background: #595a5a;
+  margin: 2rem 0;
+  padding: 2rem;
+  color: white;
+}
+
+.todaq-partners__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    align-items: center;
+}
+
+.todaq-partners__grid-item {
+    padding: 2rem;
+    text-align: center;
+}
+
+.TODAQMicro__embed {
+    background: #000;
+    border-radius: 0.5rem;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 150px;
+    padding-left: 16px;
+    cursor: pointer;
+}
+
+.TODAQMicro__embed-wrapper {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 0.5rem 1rem;
+   width: 100%;
+}
+
+.TODAQMicro__cost {
+  font-weight: bold;
+}
+
+.TODAQMicro__cost:before {
+  content: '$';
+    margin-right: 4px;
+    display: inline-block;
+}
+
+.TODAQMicro__text {
+color: #ccc;
+    text-transform: uppercase;
+}
