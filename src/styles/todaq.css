@@ -87,6 +87,7 @@
     border-radius: 0.5rem;
     color: #fff;
     display: flex;
+    display: none; /* TODO: Remove this when finished using embed code */
     justify-content: space-between;
     align-items: center;
     max-width: 150px;

@@ -23,6 +23,18 @@ export default function CharityWaitlistSection() {
           </h2>
         </div>
         <div className="todaq-charity__one-third">
+          <div dangerouslySetInnerHTML={{
+            __html: `
+<!-- TODAQ Micro, NOTE(mihok): Assume only 1 button per page for now.. -->
+<script type="text/javascript" id="todaq_micropay">
+  !function() {
+    o = document.createElement("script"),
+    o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "http://localhost:3000/bundle.js?hash=hi-im-a-hash",
+    n = document.getElementsByTagName("script")[0], n.parentNode.insertBefore(o, n);
+  }();
+</script>
+          `}} />
+
           <div className="TODAQMicro__embed">
             <TQ height={40}/>
             <div className="TODAQMicro__embed-wrapper">
