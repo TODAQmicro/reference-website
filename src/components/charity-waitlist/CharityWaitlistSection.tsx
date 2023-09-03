@@ -29,7 +29,7 @@ export default function CharityWaitlistSection() {
 <script type="text/javascript" id="todaq_micropay">
   !function() {
     o = document.createElement("script"),
-    o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "http://cdn.stage.m.todaq.net/bundle.js",
+    o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://cdn.stage.m.todaq.net/bundle.js",
     n = document.getElementsByTagName("script")[0], n.parentNode.insertBefore(o, n);
   }();
 </script>
