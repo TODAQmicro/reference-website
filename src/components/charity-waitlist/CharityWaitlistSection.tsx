@@ -10,20 +10,13 @@ export default function CharityWaitlistSection() {
         <div className="todaq-charity__two-thirds">
           <h1>
             <span className="block todaq-charity__topline">
-              <span>Join</span>
-              <span>62</span>
-            </span>
-            <span className="block todaq-charity__subline">
-              <span>+</span>
-              <span>0120</span>
+              <span>62 Companies Joined</span>
             </span>
           </h1>
           <h2>
-            <span>companies on the waitlist.</span>
+            <span>120 companies on the waitlist.</span>
           </h2>
-        </div>
-        <div className="todaq-charity__one-third">
-          <div dangerouslySetInnerHTML={{
+          <div style={{display: 'flex', justifyContent: 'right' }} dangerouslySetInnerHTML={{
             __html: `
 <!-- TODAQ Micro, NOTE(mihok): Assume only 1 button per page for now.. -->
 <script type="text/javascript" id="todaq_micropay">
@@ -34,16 +27,8 @@ export default function CharityWaitlistSection() {
   }();
 </script>
           `}} />
-
-          <div className="TODAQMicro__embed">
-            <TQ height={40}/>
-            <div className="TODAQMicro__embed-wrapper">
-              <span className="TODAQMicro__cost">0.250</span>
-            </div>
-            <TestQRCode />
-          </div>
-          <h3>Get access to the upcoming Test Lab.</h3>
-          <p>
+          <h3 style={{textAlign:'right'}}>Get access to the upcoming Test Lab.</h3>
+          <p style={{textAlign:'right'}}>
             We're opening up our micropayment platform beginning in
             mid-September 2023. Get your chance to begin offering micro
           </p> 
