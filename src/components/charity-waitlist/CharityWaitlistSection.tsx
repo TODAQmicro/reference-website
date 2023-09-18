@@ -18,13 +18,39 @@ export default function CharityWaitlistSection() {
           </h2>
           <div style={{display: 'flex', justifyContent: 'right' }} dangerouslySetInnerHTML={{
             __html: `
-<!-- TODAQ Micro, NOTE(mihok): Assume only 1 button per page for now.. -->
-<script type="text/javascript" id="todaq_micropay">
-  !function() {
-    o = document.createElement("script"),
-    o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://cdn.stage.m.todaq.net/bundle.js",
-    n = document.getElementsByTagName("script")[0], n.parentNode.insertBefore(o, n);
-  }();
+<script type="text/javascript" id="_TODAQMicroFrame-7d93f987-3e26-426d-8e3e-5d73ec33c7d3">!function() {
+  o = document.createElement("iframe"),
+  o.allowtransparency="true",
+  o.scrolling="no",
+  o.frameborder=0,
+  o.role="presentation",
+  o.allow="payment *",
+  o.width=124,
+  o.height=44,
+  o.style="border: 0 !important; background: transparent !important;",
+  o.src = "http://localhost:8500/embed/7d93f987-3e26-426d-8e3e-5d73ec33c7d3",
+  n = document.getElementById("_TODAQMicroFrame-7d93f987-3e26-426d-8e3e-5d73ec33c7d3"),
+  n.parentNode.insertBefore(o, n),
+  w = window,
+  w.addEventListener('message', (e) => {
+    if(e.source === o.contentWindow) {
+      console.log('MSG', e);
+      if(e.data.includes('_TQMResize')) {
+        d = JSON.parse(e.data.split(';')[1]),
+        o.width = d.width,
+        o.height = d.height,
+        o.style.position = 'relative';
+      } else if (e.data.includes('_TQMFullScreen')) {
+        o.style.position = 'absolute',
+        o.style.top = 0,
+        o.style.bottom = 0,
+        o.style.left = 0,
+        o.style.right = 0,
+        o.width = '100%',
+        o.height = '100%';
+      }
+    }
+  }); }();
 </script>
           `}} />
           <h3 style={{textAlign:'right'}}>Get access to the upcoming Test Lab.</h3>

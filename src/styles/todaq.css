@@ -28,8 +28,8 @@
 
 .todaq-charity h1 {
   color: #cccccc;
-  font-size: 6em;
-  line-height: 6rem;
+  font-size: 3.5em;
+  line-height: 3.5rem;
   margin-bottom: 0;
 }
 
@@ -58,7 +58,8 @@
 
 .todaq-charity h2 {
   color: #cccccc;
-  font-size: 3rem;
+  font-size: 2rem;
+  line-height: 2rem;
   margin-top: 0;
   text-align: right;
 }
@@ -66,15 +67,16 @@
 .todaq-partners {
   background: #595a5a;
   margin: 2rem 0;
+  margin-bottom: 0;
   padding: 2rem;
   color: white;
 }
 
 .todaq-partners__grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    display: flex;
+    flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
 }
 
 .todaq-partners__grid-item {
