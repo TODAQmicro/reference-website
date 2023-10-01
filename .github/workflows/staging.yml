@@ -73,7 +73,7 @@ jobs:
       id: task-def
       uses: ordrup/infrastructure-actions/amazon-ecs-get-task-definition@v0.1.16
       with:
-        family: staging-payment
+        family: staging-www
         image: ${{ steps.build-image.outputs.image}}
         container-name: 'paymentd'
 
