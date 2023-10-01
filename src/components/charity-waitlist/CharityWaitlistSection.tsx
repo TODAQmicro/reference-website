@@ -1,8 +1,21 @@
-import TestQRCode from "../SVG/TestQRCode";
-import TQ from "../SVG/TQ";
+import { useEffect, useState } from "react";
+import WaitlistModal from "./WaitlistModal";
 
 export default function CharityWaitlistSection() {
-      
+  const [ success, setSuccess ] = useState(false);
+
+  useEffect(() => {
+    let mounted = true;
+
+    if (mounted) {
+      document.addEventListener('purchase', (event) => {
+        console.log('PURCHASE SUCCESS', event);
+        setSuccess(true);
+      })
+    }
+
+    return () => { mounted = false; }
+  }, []);
 
   return (
     <section className="section todaq-charity">
@@ -18,7 +31,8 @@ export default function CharityWaitlistSection() {
           </h2>
           <div style={{display: 'flex', justifyContent: 'right' }} dangerouslySetInnerHTML={{
             __html: `
-<script type="text/javascript" id="_TODAQMicroFrame-7d93f987-3e26-426d-8e3e-5d73ec33c7d3">!function() {
+<script type="text/javascript" id="_TODAQMicroFrame-7d93f987-3e26-426d-8e3e-5d73ec33c7d3">
+!function() {
   o = document.createElement("iframe"),
   o.allowtransparency="true",
   o.scrolling="no",
@@ -48,9 +62,12 @@ export default function CharityWaitlistSection() {
         o.style.right = 0,
         o.width = '100%',
         o.height = '100%';
+      } else if (e.data.includes('_TQMSuccess')) {
+        document.dispatchEvent(new CustomEvent("purchase", { detail: '7d93f987-3e26-426d-8e3e-5d73ec33c7d3' }));
       }
     }
-  }); }();
+  }); 
+}();
 </script>
           `}} />
           <h3 style={{textAlign:'right'}}>Get access to the upcoming Test Lab.</h3>
@@ -60,6 +77,9 @@ export default function CharityWaitlistSection() {
           </p> 
         </div>
       </div>
+      {success ? <WaitlistModal onClose={() => {
+        setSuccess(false);
+      }} /> : null }
     </section>
   );
 }
