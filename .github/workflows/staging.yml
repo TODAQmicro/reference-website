@@ -58,7 +58,6 @@ jobs:
       env:
         ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
         ECR_REPOSITORY: staging/www
-        NPM_TOKEN: ${{ secrets.ROBOT_PAT }}
         IMAGE_TAG: ${{ github.sha }}
       run: |
         # Build a docker container and
