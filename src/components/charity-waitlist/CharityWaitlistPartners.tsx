@@ -1,5 +1,4 @@
 import AWS from "../SVG/AWS";
-import Azure from "../SVG/Azure";
 import GCP from "../SVG/GCP";
 
 export default function CharityWaitlistPartners() {
@@ -13,9 +12,6 @@ export default function CharityWaitlistPartners() {
           </div>
           <div className="todaq-partners__grid-item">
             <GCP width={150} />
-          </div>
-          <div className="todaq-partners__grid-item">
-            <Azure />
           </div>
         </div>
       </div>

@@ -1,8 +1,21 @@
-import TestQRCode from "../SVG/TestQRCode";
-import TQ from "../SVG/TQ";
+import { useEffect, useState } from "react";
+import WaitlistModal from "./WaitlistModal";
 
 export default function CharityWaitlistSection() {
-      
+  const [ success, setSuccess ] = useState(false);
+
+  useEffect(() => {
+    let mounted = true;
+
+    if (mounted) {
+      document.addEventListener('purchase', (event) => {
+        console.log('PURCHASE SUCCESS', event);
+        setSuccess(true);
+      })
+    }
+
+    return () => { mounted = false; }
+  }, []);
 
   return (
     <section className="section todaq-charity">
@@ -10,33 +23,63 @@ export default function CharityWaitlistSection() {
         <div className="todaq-charity__two-thirds">
           <h1>
             <span className="block todaq-charity__topline">
-              <span>Join</span>
-              <span>62</span>
-            </span>
-            <span className="block todaq-charity__subline">
-              <span>+</span>
-              <span>0120</span>
+              <span>62 Companies Joined</span>
             </span>
           </h1>
           <h2>
-            <span>companies on the waitlist.</span>
+            <span>120 companies on the waitlist.</span>
           </h2>
-        </div>
-        <div className="todaq-charity__one-third">
-          <div className="TODAQMicro__embed">
-            <TQ height={40}/>
-            <div className="TODAQMicro__embed-wrapper">
-              <span className="TODAQMicro__cost">0.250</span>
-            </div>
-            <TestQRCode />
-          </div>
-          <h3>Get access to the upcoming Test Lab.</h3>
-          <p>
+          <div style={{display: 'flex', justifyContent: 'right' }} dangerouslySetInnerHTML={{
+            __html: `
+<script type="text/javascript" id="_TODAQMicroFrame-7d93f987-3e26-426d-8e3e-5d73ec33c7d3">
+!function() {
+  o = document.createElement("iframe"),
+  o.allowtransparency="true",
+  o.scrolling="no",
+  o.frameborder=0,
+  o.role="presentation",
+  o.allow="payment *",
+  o.width=124,
+  o.height=44,
+  o.style="border: 0 !important; background: transparent !important;",
+  o.src = "http://localhost:8500/embed/7d93f987-3e26-426d-8e3e-5d73ec33c7d3",
+  n = document.getElementById("_TODAQMicroFrame-7d93f987-3e26-426d-8e3e-5d73ec33c7d3"),
+  n.parentNode.insertBefore(o, n),
+  w = window,
+  w.addEventListener('message', (e) => {
+    if(e.source === o.contentWindow) {
+      console.log('MSG', e);
+      if(e.data.includes('_TQMResize')) {
+        d = JSON.parse(e.data.split(';')[1]),
+        o.width = d.width,
+        o.height = d.height,
+        o.style.position = 'relative';
+      } else if (e.data.includes('_TQMFullScreen')) {
+        o.style.position = 'absolute',
+        o.style.top = 0,
+        o.style.bottom = 0,
+        o.style.left = 0,
+        o.style.right = 0,
+        o.width = '100%',
+        o.height = '100%';
+      } else if (e.data.includes('_TQMSuccess')) {
+        document.dispatchEvent(new CustomEvent("purchase", { detail: '7d93f987-3e26-426d-8e3e-5d73ec33c7d3' }));
+      }
+    }
+  }); 
+}();
+</script>
+          `}} />
+          <h3 style={{textAlign:'right'}}>Get access to the upcoming Test Lab.</h3>
+          <p style={{textAlign:'right'}}>
             We're opening up our micropayment platform beginning in
             mid-September 2023. Get your chance to begin offering micro
           </p> 
         </div>
       </div>
+      {success ? <WaitlistModal onClose={() => {
+        setSuccess(false);
+      }} /> : null }
     </section>
   );
 }

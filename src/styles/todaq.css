@@ -28,8 +28,8 @@
 
 .todaq-charity h1 {
   color: #cccccc;
-  font-size: 6em;
-  line-height: 6rem;
+  font-size: 3.5em;
+  line-height: 3.5rem;
   margin-bottom: 0;
 }
 
@@ -58,7 +58,8 @@
 
 .todaq-charity h2 {
   color: #cccccc;
-  font-size: 3rem;
+  font-size: 2rem;
+  line-height: 2rem;
   margin-top: 0;
   text-align: right;
 }
@@ -66,15 +67,16 @@
 .todaq-partners {
   background: #595a5a;
   margin: 2rem 0;
+  margin-bottom: 0;
   padding: 2rem;
   color: white;
 }
 
 .todaq-partners__grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    display: flex;
+    flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
 }
 
 .todaq-partners__grid-item {
@@ -87,6 +89,7 @@
     border-radius: 0.5rem;
     color: #fff;
     display: flex;
+    display: none; /* TODO: Remove this when finished using embed code */
     justify-content: space-between;
     align-items: center;
     max-width: 150px;
@@ -115,4 +118,84 @@
 .TODAQMicro__text {
 color: #ccc;
     text-transform: uppercase;
+}
+
+
+.todaq-charity__modal-background, .modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+}
+
+.todaq-charity__modal-background {
+  background: rgba(0,0,0,0.5);
+}
+
+.todaq-charity__modal {
+  background: #ffffff;
+  width: 400px;
+  height: 430px;
+  padding: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.todaq-charity__modal-fieldset {
+  border: 0;
+  display: flex;
+  flex-direction: row;
+  padding: 8px 0;
+  margin-top: 8px;
+}
+
+.todaq-charity__modal-fieldset div > div {
+  border-bottom: 1px solid #ccc;
+  padding: 8px 0;
+}
+
+.todaq-charity__modal-fieldset div:first-child > div {
+  margin-right: 16px;
+}
+
+.todaq-charity__modal-field {
+  flex-grow: 1;
+}
+
+.todaq-charity__modal-legend {
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #aaa;
+  padding: 0;
+}
+
+.todaq-charity__modal-input {
+  border: 0;
+  border-bottom: 1px solid #ccc;
+  padding: 8px 0;
+  width: 100%;
+}
+
+.todaq-charity__modal-input:focus {
+  outline: 0;
+}
+
+.todaq-charity__modal-submit-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: flex-end;
+}
+
+.toda-charity__modal-submit {
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background: #595A5A;
+  color: #fff;
+  border: 0;
+  border-radius: 3px;
+  margin-top: 16px;
 }
