@@ -8,10 +8,10 @@ export default function CharityWaitlistPartners() {
         <h3>Test Lab Partners</h3>
         <div className="todaq-partners__grid">
           <div className="todaq-partners__grid-item">
-            <AWS width={128} />
+            {/* <AWS width={128} /> */}
           </div>
           <div className="todaq-partners__grid-item">
-            <GCP width={150} />
+            {/* <GCP width={150} /> */}
           </div>
         </div>
       </div>

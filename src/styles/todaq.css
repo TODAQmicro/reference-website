@@ -65,6 +65,7 @@
 }
 
 .todaq-partners {
+  display: none;
   background: #595a5a;
   margin: 2rem 0;
   margin-bottom: 0;
