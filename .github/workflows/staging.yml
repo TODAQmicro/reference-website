@@ -63,6 +63,7 @@ jobs:
         # Build a docker container and
         # push it to ECR so that it can
         # be deployed to ECS.
+        echo "API_BASE_URL=https://pay.stage.m.todaq.net" >> .env
         npm install
         npm run build
         docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .

@@ -1,4 +1,4 @@
-import type { LinksFunction, MetaFunction } from "@remix-run/node";
+import { json, LinksFunction, MetaFunction } from "@remix-run/node";
 import {
   Link,
   Links,
@@ -43,16 +43,32 @@ export const meta: MetaFunction = () => ({
   viewport: "width=device-width,initial-scale=1",
 });
 
+export async function loader() {
+  return json({
+    ENV: {
+      API_BASE_URL: process.env.API_BASE_URL || 'http://localhost:8500',
+    },
+  });
+}
+
 /**
  * The root module's default export is a component that renders the current
  * route via the `<Outlet />` component. Think of this as the global layout
  * component for your app.
  */
 function App() {
+  const data = useLoaderData<typeof loader>();
   return (
     <Document>
       <Layout>
         <Outlet />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.ENV = ${JSON.stringify(
+              data.ENV
+            )}`,
+          }}
+        />
       </Layout>
     </Document>
   );
@@ -67,6 +83,8 @@ function Document({
   children: React.ReactNode;
   title?: string;
 }) {
+ 
+  /*
   const [googleAnalyticsScript, setGoogleAnalyticsScript] =
     useState<React.ReactNode>(null);
 
@@ -85,6 +103,7 @@ function Document({
       />
     );
   }, []);
+  */
 
   return (
     <html lang="en">
@@ -99,11 +118,11 @@ function Document({
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
-        <script
+        {/* <script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-BJBH375MQH"
         ></script>
-        {googleAnalyticsScript}
+        {googleAnalyticsScript} */}
       </body>
     </html>
   );

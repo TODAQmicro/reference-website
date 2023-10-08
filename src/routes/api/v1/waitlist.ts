@@ -15,14 +15,9 @@ export const action = async (args: ActionArgs) => {
     );
   }
 
-  const payload = await args.request.formData();
+  const { companyName, name, role, email } = await args.request.json();
 
-  if (
-    !payload.has('compantName')
-    || !payload.has('name')
-    || !payload.has('role')
-    || !payload.has('email')
-  ) {
+  if (!companyName || !name || !role || !email) {
     return json(
       {
         success: false,
@@ -32,8 +27,6 @@ export const action = async (args: ActionArgs) => {
       400
     );
   }
-
-  const email = payload.get('email');
 
   if (email && !email.toString().includes('@')) {
     return json(
@@ -46,13 +39,7 @@ export const action = async (args: ActionArgs) => {
     );
   }
 
-  const companyName = payload.get('companyName');
-  const name = payload.get('name');
-  const role = payload.get('role');
-
   const ctrl = new EmailController(args);
-
-  
 
   return ctrl.addContacts(`${companyName}`, `${name}`, `${role}`, `${email}`);
 };

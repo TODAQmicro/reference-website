@@ -44,36 +44,7 @@ export default function WaitlistModal({ onClose }: Props) {
         onClose();
       }
     }}>
-      <form className="modal todaq-charity__modal" onSubmit={async (e) => {
-        e.preventDefault();
-
-        setLoading(true);
-
-        const response = await fetch(
-          '/api/v1/waitlist',
-          {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-              companyName: companyRef.current?.value,
-              name: nameRef.current?.value,
-              role: roleRef.current?.value,
-              email: emailRef.current?.value,
-            })
-          },
-        );
-
-        setLoading(false);
-
-        if (response.ok) {
-          setSuccess(true);
-        } else {
-          setFailure(await response.text());
-        }
-    
-      }}>
+      <form className="modal todaq-charity__modal">
         <Logo />
         {success || failure
           ? success && !failure
@@ -114,7 +85,33 @@ export default function WaitlistModal({ onClose }: Props) {
                 </div>
               </fieldset>
               <div className="todaq-charity__modal-submit-wrapper">
-                <button className="toda-charity__modal-submit" type="submit">
+                <button className="toda-charity__modal-submit" type="submit" onClick={async (e) => {
+                  setLoading(true);
+
+                  const response = await fetch(
+                    '/api/v1/waitlist',
+                    {
+                      method: 'POST',
+                      headers: {
+                        'Content-Type': 'application/json',
+                      },
+                      body: JSON.stringify({
+                        companyName: companyRef.current?.value,
+                        name: nameRef.current?.value,
+                        role: roleRef.current?.value,
+                        email: emailRef.current?.value,
+                      })
+                    },
+                  );
+
+                  setLoading(false);
+
+                  if (response.ok) {
+                    setSuccess(true);
+                  } else {
+                    setFailure(await response.text());
+                  }
+                }}>
                   Submit
                 </button>
               </div>
