@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Logo from "../SVG/Logo";
 import WaitlistModal from "./WaitlistModal";
 
 export default function CharityWaitlistSection() {
@@ -20,16 +21,20 @@ export default function CharityWaitlistSection() {
   return (
     <section className="section todaq-charity">
       <div className="container todaq-charity__wrapper">
-        <div className="todaq-charity__two-thirds">
-          <h1>
+        <div className="todaq-charity__content">
+          <Logo width={200} />
+          <h2 style={{ marginTop: '64px', color: '#595A5A' }}>
+            <span>Welcome To The Micropay Revolution!</span>
+          </h2>
+          <h1 style={{ marginBottom: '64px' }}>
             <span className="block todaq-charity__topline">
-              <span>62 Companies Joined</span>
+              <span>Join 50+ visionary companies on our waitlist.</span>
             </span>
           </h1>
-          <h2>
-            <span>120 companies on the waitlist.</span>
-          </h2>
-          <div style={{display: 'flex', justifyContent: 'right' }} dangerouslySetInnerHTML={{
+          <p style={{ color: '#595A5A' }}><strong>Be a pioneer in the first wave of micropayment powered companies.</strong></p>
+          <p style={{ color: '#595A5A' }}>We are currently in our beta testing phase.  Mark your calendars for our full micropayment product launch in Jan 2024!</p>
+          <p style={{ color: '#595A5A' }}><strong>To reserve your spot on the waitlist – go ahead and get an early taste of how convenient, fast and secure the micropayment checkout can be by using the micropay sticker now:</strong></p>
+          <div style={{ marginTop: '32px' }} dangerouslySetInnerHTML={{
             __html: `
 <script type="text/javascript" id="_TODAQMicroFrame-7d93f987-3e26-426d-8e3e-5d73ec33c7d3">
 !function() {
@@ -70,11 +75,6 @@ export default function CharityWaitlistSection() {
 }();
 </script>
           `}} />
-          <h3 style={{textAlign:'right'}}>Get access to the upcoming Test Lab.</h3>
-          <p style={{textAlign:'right'}}>
-            We're opening up our micropayment platform beginning in
-            mid-September 2023. Get your chance to begin offering micro
-          </p> 
         </div>
       </div>
       {success ? <WaitlistModal onClose={() => {

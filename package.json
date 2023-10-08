@@ -30,6 +30,7 @@
   },
   "homepage": "https://github.com/todaqmicro/reference-website#readme",
   "dependencies": {
+    "@aws-sdk/client-ses": "^3.427.0",
     "@remix-run/node": "^1.19.1",
     "@remix-run/react": "^1.19.1",
     "@remix-run/serve": "^1.19.1",

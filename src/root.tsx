@@ -16,7 +16,6 @@ import { useEffect, useState } from "react";
 
 import globalStylesUrl from "~/styles/global.css";
 import todaqStylesUrl from "~/styles/todaq.css";
-import Logo from "src/components/SVG/Logo";
 
 declare global {
   interface Window {
@@ -122,7 +121,7 @@ function Layout({ children }: React.PropsWithChildren<{}>) {
             title="TODAQ Micro"
             className="todaq-app__header-home-link"
           >
-            <Logo />
+            {/* <Logo /> */}
           </Link>
           {/* 
           <nav
