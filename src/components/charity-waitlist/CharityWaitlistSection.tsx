@@ -6,7 +6,7 @@ import WaitlistModal from "./WaitlistModal";
 
 export default function CharityWaitlistSection() {
   const [ success, setSuccess ] = useState(false);
-  const [ apiUrl, setApiUrl ] = useState('https://pay.m.todaq.net');
+  const [ apiUrl, setApiUrl ] = useState('https://pay.stage.m.todaq.net');
 
   useEffect(() => {
     let mounted = true;
