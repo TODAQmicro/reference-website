@@ -11,8 +11,6 @@ export default function CharityWaitlistSection() {
   useEffect(() => {
     let mounted = true;
 
-    setApiUrl(window.ENV.API_BASE_URL);
-
     if (mounted) {
       document.addEventListener('purchase', (event) => {
         console.log('PURCHASE SUCCESS', event);
