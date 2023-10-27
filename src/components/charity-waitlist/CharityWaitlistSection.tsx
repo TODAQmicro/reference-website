@@ -55,7 +55,7 @@ export default function CharityWaitlistSection() {
   n.parentNode.insertBefore(o, n),
   w = window,
   w.addEventListener('message', (e) => {
-    if(e.source === o.contentWindow) {
+    if(e.source === o.contentWindow) { 
       console.log('MSG', e);
       if(e.data.includes('_TQMResize')) {
         d = JSON.parse(e.data.split(';')[1]),
