@@ -76,7 +76,7 @@ jobs:
       with:
         family: staging-www
         image: ${{ steps.build-image.outputs.image}}
-        container-name: 'paymentd'
+        container-name: 'wwwd'
 
     - name: Deploy Amazon ECS task definition
       uses: aws-actions/amazon-ecs-deploy-task-definition@v1
