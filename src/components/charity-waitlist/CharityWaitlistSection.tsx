@@ -2,18 +2,21 @@ import { useEffect, useState } from "react";
 import Logo from "../SVG/Logo";
 import WaitlistModal from "./WaitlistModal";
 
-
+declare global { 
+  interface Window {
+    ENV: { [key: string]: any }
+  }
+}
 
 export default function CharityWaitlistSection() {
   const [ success, setSuccess ] = useState(false);
-  const [ apiUrl, setApiUrl ] = useState('https://pay.stage.m.todaq.net');
+  const [ apiUrl, _ ] = useState(window.ENV.API_BASE_URL || 'http://localhost:8500');
 
   useEffect(() => {
     let mounted = true;
 
     if (mounted) {
-      document.addEventListener('purchase', (event) => {
-        console.log('PURCHASE SUCCESS', event);
+      document.addEventListener('purchase', () => {
         setSuccess(true);
       })
     }
@@ -55,8 +58,7 @@ export default function CharityWaitlistSection() {
   n.parentNode.insertBefore(o, n),
   w = window,
   w.addEventListener('message', (e) => {
-    if(e.source === o.contentWindow) { 
-      console.log('MSG', e);
+    if(e.source === o.contentWindow) {
       if(e.data.includes('_TQMResize')) {
         d = JSON.parse(e.data.split(';')[1]),
         o.width = d.width,
