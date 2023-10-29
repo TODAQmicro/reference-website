@@ -10,14 +10,11 @@ declare global {
 
 export default function CharityWaitlistSection() {
   const [ success, setSuccess ] = useState(false);
-  const [ apiUrl, setApiUrl ] = useState('http://localhost:8500');
 
   useEffect(() => {
     let mounted = true;
 
     if (mounted) {
-      setApiUrl(window.ENV.API_BASE_URL);
-
       document.addEventListener('purchase', () => {
         setSuccess(true);
       })
@@ -55,7 +52,7 @@ export default function CharityWaitlistSection() {
   o.width=124,
   o.height=44,
   o.style="border: 0 !important; background: transparent !important;",
-  o.src = "${apiUrl}/embed/7d93f987-3e26-426d-8e3e-5d73ec33c7d3",
+  o.src = "https://pay.stage.m.todaq.net/embed/7d93f987-3e26-426d-8e3e-5d73ec33c7d3",
   n = document.getElementById("_TODAQMicroFrame-7d93f987-3e26-426d-8e3e-5d73ec33c7d3"),
   n.parentNode.insertBefore(o, n),
   w = window,
