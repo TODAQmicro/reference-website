@@ -29,16 +29,25 @@ export default function CharityWaitlistSection() {
         <div className="todaq-charity__content">
           <Logo width={200} />
           <h2 style={{ marginTop: '64px', color: '#595A5A' }}>
-            <span>Welcome To The Micropay Revolution!</span>
+            <span>Welcome To The Micropay Liberation!</span>
           </h2>
           <h1 style={{ marginBottom: '64px' }}>
             <span className="block todaq-charity__topline">
               <span>Join 50+ visionary companies on our waitlist.</span>
             </span>
           </h1>
+          <p style={{ color: '#595A5A' }}>
+            Digital micropayments under a dollar allow business and consumer customers to purchase discrete digital services and content without need of registration, login or subscription.   Micropayments can be made without expensive merchant swipe, interchange and processing fees.
+          </p>
+          <p style={{ color: '#595A5A' }}>
+            Micropayers have strong control of their funds and can micropay anywhere.
+          </p>
+          <p style={{ color: '#595A5A' }}>
+            Businesses, creators, startups and all software API providers can power up their services and content with a simple low code integration.  Access unserved customers who have demand, but not enough to be locked into a subscription. 
+          </p>
           <p style={{ color: '#595A5A' }}><strong>Be a pioneer in the first wave of micropayment powered companies.</strong></p>
           <p style={{ color: '#595A5A' }}>We are currently in our beta testing phase.  Mark your calendars for our full micropayment product launch in Jan 2024!</p>
-          <p style={{ color: '#595A5A' }}><strong>To reserve your spot on the waitlist – go ahead and get an early taste of how convenient, fast and secure the micropayment checkout can be by using the micropay sticker now:</strong></p>
+          <p style={{ color: '#595A5A' }}><strong>Reserve your spot on the product waitlist by making a micropayment of $0.25 and try the technology for yourself.  It’s a simple one minute process to set  up a wallet, charge up a little bit of value, and make instant one-click micropayments from there.  To get an early taste, click the button below:</strong></p>
           <div style={{ marginTop: '32px' }} dangerouslySetInnerHTML={{
             __html: `
 <script type="text/javascript" id="_TODAQMicroFrame-7d93f987-3e26-426d-8e3e-5d73ec33c7d3">
@@ -79,6 +88,9 @@ export default function CharityWaitlistSection() {
 }();
 </script>
           `}} />
+          <p style={{ color: '#595A5A' }}>
+            Many other micropayable services and content will appear here over the next few months prior to launch, be sure to check in again.
+          </p>
         </div>
       </div>
       {success ? <WaitlistModal onClose={() => {
