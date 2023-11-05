@@ -2,6 +2,12 @@ import { useEffect, useState } from "react";
 import Logo from "../SVG/Logo";
 import WaitlistModal from "./WaitlistModal";
 
+import circularEconnImage from "../../assets/images/cicle-circular-econn.png";
+import moneyImage from "../../assets/images/circle-money.png";
+import cheapImage from "../../assets/images/circle-cheap.png";
+import handShakeImage from "../../assets/images/circle-handshake.png";
+import valueImage from "../../assets/images/circle-value.png";
+
 declare global { 
   interface Window {
     ENV: { [key: string]: any }
@@ -37,17 +43,33 @@ export default function CharityWaitlistSection() {
             </span>
           </h1>
           <p style={{ color: '#595A5A' }}>
-            Digital micropayments under a dollar allow business and consumer customers to purchase discrete digital services and content without need of registration, login or subscription.   Micropayments can be made without expensive merchant swipe, interchange and processing fees.
+            A low code solution to engage your unserved, unsubscribed customers through a one-tap pay for your services without need of login, registration or subscription. Receive payments under a dollar without expensive merchant swipe, interchange and processing fees.
           </p>
-          <p style={{ color: '#595A5A' }}>
-            Micropayers have strong control of their funds and can micropay anywhere.
-          </p>
-          <p style={{ color: '#595A5A' }}>
-            Businesses, creators, startups and all software API providers can power up their services and content with a simple low code integration.  Access unserved customers who have demand, but not enough to be locked into a subscription. 
-          </p>
+          <div style={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
+            <div>
+              <h5>More Revenue</h5>
+              <img src={moneyImage} alt="Image of a stack of cash" width={150} />
+            </div>
+            <div>
+              <h5>Lower Costs</h5>
+              <img src={cheapImage} alt="Graph trending downwards" width={150} />
+            </div>
+            <div>
+              <h5>Faster Cash Cycle</h5>
+              <img src={circularEconnImage} alt="Dollar sign" width={150} />
+            </div>
+            <div>
+              <h5>Higher Margins</h5>
+              <img src={valueImage} alt="Graph trending upwards" width={150} />
+            </div>
+            <div>
+              <h5>Verified Real-time Data</h5>
+              <img src={handShakeImage} alt="Two hands shaking together" width={150} />
+            </div>
+          </div>
           <p style={{ color: '#595A5A' }}><strong>Be a pioneer in the first wave of micropayment powered companies.</strong></p>
           <p style={{ color: '#595A5A' }}>We are currently in our beta testing phase.  Mark your calendars for our full micropayment product launch in Jan 2024!</p>
-          <p style={{ color: '#595A5A' }}><strong>Reserve your spot on the product waitlist by making a micropayment of $0.25 and try the technology for yourself.  It’s a simple one minute process to set  up a wallet, charge up a little bit of value, and make instant one-click micropayments from there.  To get an early taste, click the button below:</strong></p>
+          <p style={{ color: '#595A5A' }}><strong style={{ color: '#DE1A4F' }}>Reserve your spot on the product waitlist by making a micropayment of $0.25 and try the technology for yourself.</strong>  It’s a simple one minute process to set  up a wallet, charge up a little bit of value, and make instant one-click micropayments from there.  To get an early taste, click the button below:</p>
           <div style={{ marginTop: '32px' }} dangerouslySetInnerHTML={{
             __html: `
 <script type="text/javascript" id="_TODAQMicroFrame-7d93f987-3e26-426d-8e3e-5d73ec33c7d3">
