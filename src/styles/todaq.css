@@ -145,6 +145,24 @@ color: #ccc;
   border-radius: 8px;
 }
 
+.todaq-charity__modal-wrapper {
+  position: relative;
+  margin-right: 64px;
+  margin-left: 64px;
+  margin-bottom: 100px;
+}
+
+.todaq-charity__modal-wrapper.hide:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  content: " ";
+  background: rgb(255,255,255);
+  background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.75) 50%, rgba(255,255,255,0) 100%);
+}
+
 .todaq-charity__modal-fieldset {
   border: 0;
   display: flex;
@@ -163,7 +181,12 @@ color: #ccc;
 }
 
 .todaq-charity__modal-field {
+  display: flex;
   flex-grow: 1;
+}
+
+.todaq-charity__modal-field input + input {
+  margin-left: 32px;
 }
 
 .todaq-charity__modal-legend {
@@ -174,14 +197,17 @@ color: #ccc;
 }
 
 .todaq-charity__modal-input {
-  border: 0;
-  border-bottom: 1px solid #ccc;
-  padding: 8px 0;
+  border: 1px solid #ccc;
+  padding: 24px 16px;
   width: 100%;
 }
 
 .todaq-charity__modal-input:focus {
   outline: 0;
+}
+
+.todaq-charity__modal-input:disabled {
+  background: #eee;
 }
 
 .todaq-charity__modal-submit-wrapper {
@@ -200,4 +226,38 @@ color: #ccc;
   border: 0;
   border-radius: 3px;
   margin-top: 16px;
+}
+
+.todaq-charity__tile {
+  width: 480px;
+  height: 262px;
+  top: 150px;
+  margin-left: 0;
+  left: 0;
+  position: absolute;
+  background: #DE1A4F;
+  z-index: 100000;
+  padding: 16px;
+  display: flex;
+}
+
+.todaq-charity__tile div:first-child {
+  color: white;
+  padding: 16px;
+  max-width: 50%;
+}
+
+.todaq-charity__tile div:last-child {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  flex-grow: 2;
+}
+
+.todaq-charity__tile h2 {
+  color: white;
+}
+
+.todaq-charity__tile p {
+  color: white;
 }
