@@ -18,7 +18,7 @@ export class EmailController extends Controller {
 
     const params = {
       Destination: {
-        ToAddresses: ['sales@todaqfinance.com'],
+        ToAddresses: ['sales@todaq.net', 'sales@todaqfinance.com', 'salesmanager@todaqfinance.com'],
         BccAddresses: ['matthew.mihok@todaq.net'],
       },
       Source: 'support@mail.m.todaq.net',
