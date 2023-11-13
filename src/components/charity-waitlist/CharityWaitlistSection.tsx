@@ -81,8 +81,8 @@ export default function CharityWaitlistSection() {
           <p style={{ color: '#595A5A' }}>We are currently in our beta testing phase.  Mark your calendars for our full micropayment product launch in Jan 2024!</p>
           <p style={{ color: '#595A5A' }}><strong style={{ color: '#DE1A4F' }}>Reserve your spot on the product waitlist by making a micropayment of $0.25 and try the technology for yourself.</strong>  It’s a simple one minute process to set  up a wallet, charge up a little bit of value, and make instant one-click micropayments from there.  To get an early taste, click the button below:</p>
 
-          <div style={{ position: 'relative', marginTop: '64px' }}>
-            <div className="todaq-charity__tile" style={{ display: success ? 'none' : 'block' }}>
+          <div style={{ position: 'relative', marginTop: '64px', display: 'flex', justifyContent: 'center' }}>
+            <div className="todaq-charity__tile" style={{ display: success ? 'none' : 'flex' }}>
               <div>
                 <h2>Join the waitlist</h2>
                 <p>Make a micropayment to join the waitlist!</p>
@@ -97,8 +97,8 @@ export default function CharityWaitlistSection() {
       o.frameborder=0,
       o.role="presentation",
       o.allow="payment *",
-      o.width=124,
-      o.height=44,
+      o.width=137,
+      o.height=48,
       o.style="border: 0 !important; background: transparent !important;",
       o.src = "https://pay.stage.m.todaq.net/embed/7d93f987-3e26-426d-8e3e-5d73ec33c7d3",
       n = document.getElementById("_TODAQMicroFrame-7d93f987-3e26-426d-8e3e-5d73ec33c7d3"),
@@ -128,7 +128,7 @@ export default function CharityWaitlistSection() {
     </script>
               `}} />
             </div>
-            <div className={`todaq-charity__modal-wrapper ${!success ? 'hide': ''}`}>
+            <div className={`todaq-charity__modal-wrapper ${!success ? 'hide': ''}`} style={{ width: '100%' }}>
               <h2>Fill out below to join</h2>
               <p>Enter your details below to be included in the next lab sessions.</p>
               <fieldset className="todaq-charity__modal-fieldset">
