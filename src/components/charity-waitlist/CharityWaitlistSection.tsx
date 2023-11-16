@@ -7,6 +7,7 @@ import moneyImage from "../../assets/images/circle-money.png";
 import cheapImage from "../../assets/images/circle-cheap.png";
 import handShakeImage from "../../assets/images/circle-handshake.png";
 import valueImage from "../../assets/images/circle-value.png";
+import {Checkmark} from "../SVG/Checkmark";
 
 declare global { 
   interface Window {
@@ -89,7 +90,7 @@ export default function CharityWaitlistSection() {
               </div>
               <div className="todaq-charity__micropay" dangerouslySetInnerHTML={{
                 __html: `
-    <script type="text/javascript" id="_TODAQMicroFrame-7d93f987-3e26-426d-8e3e-5d73ec33c7d3">
+    <script type="text/javascript" id="_TODAQMicroFrame-228df298-617c-4364-966e-a332896faaf9">
     !function() {
       o = document.createElement("iframe"),
       o.allowtransparency="true",
@@ -100,8 +101,8 @@ export default function CharityWaitlistSection() {
       o.width=137,
       o.height=48,
       o.style="border: 0 !important; background: transparent !important;",
-      o.src = "https://pay.stage.m.todaq.net/embed/7d93f987-3e26-426d-8e3e-5d73ec33c7d3",
-      n = document.getElementById("_TODAQMicroFrame-7d93f987-3e26-426d-8e3e-5d73ec33c7d3"),
+      o.src = "https://pay.stage.m.todaq.net/embed/228df298-617c-4364-966e-a332896faaf9",
+      n = document.getElementById("_TODAQMicroFrame-228df298-617c-4364-966e-a332896faaf9"),
       n.parentNode.insertBefore(o, n),
       w = window,
       w.addEventListener('message', (e) => {
@@ -120,7 +121,7 @@ export default function CharityWaitlistSection() {
             o.width = '100%',
             o.height = '100%';
           } else if (e.data.includes('_TQMSuccess')) {
-            document.dispatchEvent(new CustomEvent("purchase", { detail: '7d93f987-3e26-426d-8e3e-5d73ec33c7d3' }));
+            document.dispatchEvent(new CustomEvent("purchase", { detail: '228df298-617c-4364-966e-a332896faaf9' }));
           }
         }
       }); 
