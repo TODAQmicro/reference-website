@@ -112,6 +112,8 @@ export default function CharityWaitlistSection() {
             o.width = d.width,
             o.height = d.height,
             o.style.position = 'relative';
+          } else if (e.data.includes('_TQMCook')) {
+            document.cookie = '__todaqm=' + e.data.split(';')[1];
           } else if (e.data.includes('_TQMFullScreen')) {
             o.style.position = 'fixed',
             o.style.top = 0,
