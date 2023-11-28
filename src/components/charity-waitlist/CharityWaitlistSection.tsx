@@ -82,7 +82,7 @@ export default function CharityWaitlistSection() {
           <p style={{ color: '#595A5A' }}>We are currently in our beta testing phase.  Mark your calendars for our full micropayment product launch in Jan 2024!</p>
           <p style={{ color: '#595A5A' }}><strong style={{ color: '#DE1A4F' }}>Reserve your spot on the product waitlist by making a micropayment of $0.25 and try the technology for yourself.</strong>  It’s a simple one minute process to set  up a wallet, charge up a little bit of value, and make instant one-click micropayments from there.  To get an early taste, click the button below:</p>
 
-          <div style={{ position: 'relative', marginTop: '64px', display: 'flex', justifyContent: 'center' }}>
+          <div style={{ position: 'relative', marginTop: '64px', display: 'flex', justifyContent: 'center', border: '2px solid grey', paddingTop: '64px' }}>
             <div className="todaq-charity__tile" style={{ display: success ? 'none' : 'flex' }}>
               <div>
                 <h2>Join the waitlist</h2>
