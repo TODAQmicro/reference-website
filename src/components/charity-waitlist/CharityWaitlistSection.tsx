@@ -22,6 +22,7 @@ export default function CharityWaitlistSection() {
   const roleRef = useRef<HTMLInputElement>(null);
   const emailRef = useRef<HTMLInputElement>(null);
   const [ success, setSuccess ] = useState(false);
+  const [ submitted, setSubmitted ] = useState(false);
   const [ loading, setLoading ] = useState(false);
 
   useEffect(() => {
@@ -169,7 +170,7 @@ export default function CharityWaitlistSection() {
                 </div>
               </fieldset>
               <div className="todaq-charity__modal-submit-wrapper">
-                <button className="toda-charity__modal-submit" type="submit" onClick={async (e) => {
+                <button className={!submitted ? 'toda-charity__modal-submit' : 'todaq-charity__modal-submit success'} type="submit" onClick={async (e) => {
                   setLoading(true);
 
                   const response = await fetch(
@@ -196,11 +197,19 @@ export default function CharityWaitlistSection() {
                     lastNameRef.current!.value = '';
                     roleRef.current!.value = '';
                     emailRef.current!.value = '';
+
+                    setSubmitted(true);
+
+                    setTimeout(() => setSubmitted(false), 5000);
                   } else {
                     console.error('ERROR', response.status);
                   }
                 }}>
-                  Submit
+                  {!submitted
+                    ? !loading
+                        ? <span>Submit</span>
+                        : <span className="spinner"></span>
+                    : <span>Success</span>}
                 </button>
               </div>
 

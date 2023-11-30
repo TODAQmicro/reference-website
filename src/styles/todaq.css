@@ -218,7 +218,8 @@ color: #ccc;
 }
 
 .toda-charity__modal-submit {
-  display: inline-block;
+  display: flex;
+  justify-content: center;
   padding: 0.5em 1em;
   text-decoration: none;
   background: #595A5A;
@@ -226,6 +227,19 @@ color: #ccc;
   border: 0;
   border-radius: 3px;
   margin-top: 16px;
+  min-width: 68px;
+}
+
+.todaq-charity__modal-submit.success {
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background: #20bf6b;
+  color: #fff;
+  border: 0;
+  border-radius: 3px;
+  margin-top: 16px;
+
 }
 
 .todaq-charity__tile {
@@ -259,4 +273,34 @@ color: #ccc;
 
 .todaq-charity__tile p {
   color: white;
+}
+
+
+.spinner {
+  display: inline-block;
+  border: 0 !important;
+  padding: 0 !important;
+  width: 16px;
+  height: 16px;
+}
+
+.spinner:after {
+  content: " ";
+  display: block;
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  border-color: #ffffff transparent #ffffff transparent;
+  animation: spinner 1.2s linear infinite;
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
