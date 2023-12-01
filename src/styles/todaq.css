@@ -10,8 +10,20 @@
 
 .todaq-charity {
     margin: 2rem 0;
-    padding: 2rem;
 }
+
+/* Mobile */
+@media (min-width:320px)  { }
+
+/* Tablet */
+@media (min-width:961px)  {
+  .todaq-charity {
+    padding: 2rem;
+  }
+}
+
+/* Desktop */
+@media (min-width:1281px) { }
 
 .todaq-charity__wrapper {
   display: flex;
@@ -34,6 +46,11 @@
   line-height: 3.5rem;
   margin-bottom: 0;
   font-family: 'Lexend', sans-serif;
+}
+
+
+.todaq-charity__content {
+  width: 100%;
 }
 
 .todaq-charity h1 .todaq-charity__topline {
@@ -243,9 +260,9 @@ color: #ccc;
 }
 
 .todaq-charity__tile {
-  width: 480px;
   height: 262px;
-  top: 150px;
+  width: 90%;
+  top: 300px;
   margin-left: 0;
   position: absolute;
   background: #DE1A4F;
@@ -274,6 +291,20 @@ color: #ccc;
 .todaq-charity__tile p {
   color: white;
 }
+
+/* Mobile */
+@media (min-width:320px)  { }
+
+/* Tablet */
+@media (min-width:961px)  {
+  .todaq-charity__tile {
+    width: 480px;
+    top: 150px;
+  }
+}
+
+/* Desktop */
+@media (min-width:1281px) { }
 
 
 .spinner {

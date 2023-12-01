@@ -21,6 +21,7 @@ export default function CharityWaitlistSection() {
   const lastNameRef = useRef<HTMLInputElement>(null);
   const roleRef = useRef<HTMLInputElement>(null);
   const emailRef = useRef<HTMLInputElement>(null);
+  const useCaseRef = useRef<HTMLTextAreaElement>(null);
   const [ success, setSuccess ] = useState(false);
   const [ submitted, setSubmitted ] = useState(false);
   const [ loading, setLoading ] = useState(false);
@@ -57,7 +58,13 @@ export default function CharityWaitlistSection() {
           <p style={{ color: '#595A5A' }}>
             A low code solution to engage your unserved, unsubscribed customers through a one-tap pay for your services without need of login, registration or subscription. Receive payments under a dollar without expensive merchant swipe, interchange and processing fees.
           </p>
-          <div style={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
+          <div style={{
+            display: 'flex', 
+            alignItems: 'center',
+            textAlign: 'center',
+            flexWrap: 'wrap',
+            justifyContent: 'center',
+          }}>
             <div>
               <h5>More Revenue</h5>
               <img src={moneyImage} alt="Image of a stack of cash" width={150} />
@@ -169,6 +176,14 @@ export default function CharityWaitlistSection() {
                   <input className="todaq-charity__modal-input" ref={emailRef} type="text" placeholder="john@acme.inc" disabled={!success || loading} />
                 </div>
               </fieldset>
+              <fieldset className="todaq-charity__modal-fieldset">
+                <legend className="todaq-charity__modal-legend">
+                  What micropayment use case are you most excited about?
+                </legend>
+                <div className="todaq-charity__modal-field">
+                  <textarea className="todaq-charity__modal-input" ref={useCaseRef} disabled={!success || loading} />
+                </div>
+              </fieldset>
               <div className="todaq-charity__modal-submit-wrapper">
                 <button className={!submitted ? 'toda-charity__modal-submit' : 'todaq-charity__modal-submit success'} type="submit" onClick={async (e) => {
                   setLoading(true);
@@ -185,6 +200,7 @@ export default function CharityWaitlistSection() {
                         name: `${firstNameRef.current?.value} ${lastNameRef.current?.value}`,
                         role: roleRef.current?.value,
                         email: emailRef.current?.value,
+                        useCase: useCaseRef.current?.value,
                       })
                     },
                   );
@@ -197,6 +213,7 @@ export default function CharityWaitlistSection() {
                     lastNameRef.current!.value = '';
                     roleRef.current!.value = '';
                     emailRef.current!.value = '';
+                    useCaseRef.current!.value = '';
 
                     setSubmitted(true);
 

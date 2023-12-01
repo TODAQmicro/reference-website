@@ -14,6 +14,7 @@ export class EmailController extends Controller {
     name: string,
     role: string,
     email: string,
+    useCase: string,
   ) {
 
     const params = {
@@ -30,6 +31,7 @@ Company Name: ${companyName}\r\n\n
 Name: ${name}\r\n\n
 Role: ${role}\r\n\n
 Email: ${email}\r\n\r\n\n
+Use Case: ${useCase}\t\r\n\t\r\n
 
 This is an automated message.
             `,
