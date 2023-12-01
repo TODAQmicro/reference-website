@@ -217,7 +217,10 @@ export default function CharityWaitlistSection() {
 
                     setSubmitted(true);
 
-                    setTimeout(() => setSubmitted(false), 5000);
+                    setTimeout(() => {
+                      setSubmitted(false);
+                      setSuccess(false);
+                    }, 5000);
                   } else {
                     console.error('ERROR', response.status);
                   }
