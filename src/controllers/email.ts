@@ -27,10 +27,10 @@ export class EmailController extends Controller {
         Body: {
           Html: {
             Data: `
-Company Name: ${companyName}\r\n\n
-Name: ${name}\r\n\n
-Role: ${role}\r\n\n
-Email: ${email}\r\n\r\n\n
+Company Name: ${companyName}\r\n
+Name: ${name}\r\n
+Role: ${role}\r\n
+Email: ${email}\r\n\r\n
 Use Case: ${useCase}\t\r\n\t\r\n
 
 This is an automated message.
