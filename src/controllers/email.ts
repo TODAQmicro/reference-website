@@ -14,21 +14,24 @@ export class EmailController extends Controller {
     name: string,
     role: string,
     email: string,
+    useCase: string,
   ) {
 
     const params = {
       Destination: {
-        ToAddresses: ['support@mail.m.todaq.net'],
+        ToAddresses: ['sales@todaq.net', 'sales@todaqfinance.com', 'salesmanager@todaqfinance.com'],
+        BccAddresses: ['matthew.mihok@todaq.net'],
       },
       Source: 'support@mail.m.todaq.net',
       Message: {
         Body: {
           Html: {
             Data: `
-Company Name: ${companyName}
-Name: ${name}
-Role: ${role}
-Email: ${email}
+Company Name: ${companyName}\r\n
+Name: ${name}\r\n
+Role: ${role}\r\n
+Email: ${email}\r\n\r\n
+Use Case: ${useCase}\t\r\n\t\r\n
 
 This is an automated message.
             `,

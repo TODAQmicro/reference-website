@@ -15,7 +15,7 @@ export const action = async (args: ActionArgs) => {
     );
   }
 
-  const { companyName, name, role, email } = await args.request.json();
+  const { companyName, name, role, email, useCase } = await args.request.json();
 
   if (!companyName || !name || !role || !email) {
     return json(
@@ -41,5 +41,5 @@ export const action = async (args: ActionArgs) => {
 
   const ctrl = new EmailController(args);
 
-  return ctrl.addContacts(`${companyName}`, `${name}`, `${role}`, `${email}`);
+  return ctrl.addContacts(`${companyName}`, `${name}`, `${role}`, `${email}`, `${useCase}`);
 };
