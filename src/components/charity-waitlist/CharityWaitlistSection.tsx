@@ -22,9 +22,12 @@ export default function CharityWaitlistSection() {
   const roleRef = useRef<HTMLInputElement>(null);
   const emailRef = useRef<HTMLInputElement>(null);
   const useCaseRef = useRef<HTMLTextAreaElement>(null);
+
   const [ success, setSuccess ] = useState(false);
   const [ submitted, setSubmitted ] = useState(false);
   const [ loading, setLoading ] = useState(false);
+
+  const [ isMobile, setIsMobile ] = useState(false);
 
   useEffect(() => {
     let mounted = true;
@@ -42,24 +45,54 @@ export default function CharityWaitlistSection() {
     return () => { mounted = false; }
   }, []);
 
+  useEffect(() => {
+    let mounted = true;
+
+    if (mounted) {
+      if (document && document.body.clientWidth >= 768) {
+        setIsMobile(false);
+      } else {
+        setIsMobile(true);
+      }
+    }
+
+    return () => { mounted = false; }
+  }, []);
+
   return (
     <section className="section todaq-charity">
       <div className="container todaq-charity__wrapper">
         <div className="todaq-charity__content">
           <Logo width={200} />
-          <h2 style={{ marginTop: '64px', color: '#595A5A' }}>
-            <span>Welcome To The Micropay Liberation!</span>
+          <h2 style={{ marginTop: '64px', color: '#595A5A', lineHeight: '2.5rem' }}>
+            <span>Welcome to the micropayment liberation brought to you by <strong>TAPP (“Tapp And Privately Pay”)</strong></span>
           </h2>
+          <p style={{ color: '#595A5A' }}>
+            We are in private beta moving to public beta launch on <strong>31 March 2024!</strong>
+          </p>
           <h1 style={{ marginBottom: '64px' }}>
             <span className="block todaq-charity__topline">
-              <span>Join 50+ visionary companies on our waitlist.</span>
+              <span>Join 100+ visionary companies on our waitlist.</span>
             </span>
           </h1>
           <p style={{ color: '#595A5A' }}>
-            A low code solution to engage your unserved, unsubscribed customers through a one-tap pay for your services without need of login, registration or subscription. Receive payments under a dollar without expensive merchant swipe, interchange and processing fees.
+            Join the waitlist by making a 25 cent micropayment and try TAPP for yourself.
           </p>
+          <div>
+            <ol style={{ color: '#595A5A' }}>
+<li>Scroll down to the micro-paywall. TAPP the button!</li>
+<li>Create and load your wallet with as little a $1 in under a minute.</li>
+<li>Make a 25 cent micropayment to access the waitlist form</li>
+<li>Fill out the form and hit submit.</li>
+<li>Check your email for your micropayment receipt.</li>
+<li>Mark your calendar for 31 March.</li>
+<li>Access early preview news and our team will contact youi. Be a part of the group in the know.</li>
+            </ol>
+          </div>
+          <p></p>
+          <p><br /></p>
           <div style={{
-            display: 'flex', 
+            display: 'none', 
             alignItems: 'center',
             textAlign: 'center',
             flexWrap: 'wrap',
@@ -86,9 +119,29 @@ export default function CharityWaitlistSection() {
               <img src={handShakeImage} alt="Two hands shaking together" width={150} />
             </div>
           </div>
-          <p style={{ color: '#595A5A' }}><strong>Be a pioneer in the first wave of micropayment powered companies.</strong></p>
-          <p style={{ color: '#595A5A' }}>We are currently in our beta testing phase.  Mark your calendars for our full micropayment product launch in Jan 2024!</p>
-          <p style={{ color: '#595A5A' }}><strong style={{ color: '#DE1A4F' }}>Reserve your spot on the product waitlist by making a micropayment of $0.25 and try the technology for yourself.</strong>  It’s a simple one minute process to set  up a wallet, charge up a little bit of value, and make instant one-click micropayments from there.  To get an early taste, click the button below:</p>
+          <h2 style={{ color: '#595A5A' }}><strong style={{ color: '#DE1A4F' }}>Why micropayments now?</strong></h2>
+          <div style={{ display: 'flex', flexDirection: isMobile ? 'column' : 'row' }}>
+            <div style={{ width: isMobile ? '100%' : '50%' }}>
+              <ul style={{ color: '#595A5A', margin: 0 }}>
+<li>Access the long tail of unserved customers that want to pay as they go.</li>
+<li>Real-time one-tapp micropayments for digital content and services.</li>
+<li>Revolutionary new micropay experiences include turning any user interface element into a micropay experience and AI conversational checkout.</li>
+<li>Critical services like digital healthcare and education become affordable and accessible</li>
+              </ul>
+            </div>
+            <div style={{ width: isMobile ? '100%' : '50%' }}>
+              <ul style={{ color: '#595A5A', margin: 0 }}>
+<li>Pay as you go for sports, media, publishing, streaming, music, games and more</li>
+<li>No logins, subscriptions, or sharing of identity or account data.</li>
+<li>Earn more revenue.</li>
+<li>Instant checkout reduces abandonment</li>
+<li>Reduce cash cycle to seconds with instant distributions.</li>
+<li>Remove payment and back-office costs.</li>
+<li>Automated, portable, verifiable records.</li>
+<li>Fast, simple, low code implementation</li>
+              </ul>
+            </div>
+          </div>
 
           <div style={{ position: 'relative', marginTop: '64px', display: 'flex', justifyContent: 'center', border: '2px solid grey', paddingTop: '64px' }}>
             <div className="todaq-charity__tile" style={{ display: success ? 'none' : 'flex' }}>
@@ -232,14 +285,8 @@ export default function CharityWaitlistSection() {
                     : <span>Success</span>}
                 </button>
               </div>
-
             </div>
-
           </div>
-
-          <p style={{ color: '#595A5A' }}>
-            Many other micropayable services and content will appear here over the next few months prior to launch, be sure to check in again.
-          </p>
         </div>
       </div>
     </section>
