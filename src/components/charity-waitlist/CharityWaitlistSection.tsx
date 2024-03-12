@@ -162,7 +162,7 @@ export default function CharityWaitlistSection() {
       o.width=137,
       o.height=48,
       o.style="border: 0 !important; background: transparent !important;",
-      o.src = "https://pay.m.todaq.net/v2/embed/adedc7a6-3a65-453a-a1a2-0f83a3e8da1a",
+      o.src = "https://pay.stage.m.todaq.net/v2/embed/adedc7a6-3a65-453a-a1a2-0f83a3e8da1a",
       n = document.getElementById("_TODAQMicroFrame-adedc7a6-3a65-453a-a1a2-0f83a3e8da1a"),
       n.parentNode.insertBefore(o, n),
       w = window,
