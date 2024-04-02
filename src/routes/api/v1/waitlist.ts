@@ -25,7 +25,13 @@ export const action = async (args: ActionArgs) => {
         errors: ["Method not allowed"],
         message: "Method not allowed",
       },
-      405
+      { 
+        status: 405,
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Headers': 'Content-Type',
+        },
+      },
     );
   }
 
@@ -38,7 +44,13 @@ export const action = async (args: ActionArgs) => {
         errors: ["Bad request"],
         message: "Bad request",
       },
-      400
+      { 
+        status: 400,
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Headers': 'Content-Type',
+        },
+      },
     );
   }
 
@@ -49,7 +61,13 @@ export const action = async (args: ActionArgs) => {
         errors: ["Bad request"],
         message: "Bad request",
       },
-      400
+      { 
+        status: 400,
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Headers': 'Content-Type',
+        },
+      },
     );
   }
 

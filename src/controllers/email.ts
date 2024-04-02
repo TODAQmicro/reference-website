@@ -51,7 +51,15 @@ This is an automated message.
     try {
       await client.send(command);
 
-      return json({ success: true, errors: [], message: "OK" }, 200);
+      return json({ success: true, errors: [], message: "OK" },
+        { 
+          status: 200,
+          headers: {
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Headers': 'Content-Type',
+          },
+        },
+      );
     } catch (error: any) {
       return json(
         {
