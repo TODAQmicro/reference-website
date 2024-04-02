@@ -1,7 +1,20 @@
-import type { ActionArgs } from "@remix-run/node";
+import { ActionArgs, LoaderArgs } from "@remix-run/node";
 import { json } from "@remix-run/node";
 
 import { EmailController } from "~/controllers/email";
+
+export const loader = async (args: LoaderArgs) => {
+   if (args.request.method === 'OPTIONS') {
+    return new Response('', {
+      status: 200,
+      headers: {
+        'Access-Control-Allow-Origin': '*'
+      },
+    });
+  }
+ 
+  return action(args);
+};
 
 export const action = async (args: ActionArgs) => {
   if (args.request.method !== 'POST') {
