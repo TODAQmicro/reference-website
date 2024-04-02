@@ -8,7 +8,8 @@ export const loader = async (args: LoaderArgs) => {
     return new Response('', {
       status: 200,
       headers: {
-        'Access-Control-Allow-Origin': '*'
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Headers': 'Content-Type',
       },
     });
   }
